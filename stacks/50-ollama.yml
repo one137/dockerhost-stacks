@@ -1,0 +1,22 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ct-ollama
+    volumes:
+      - /srv/docker/volumes/ollama:/root/.ollama
+    ports:
+      - 11434:11434
+    read_only: true
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+          cpus: '8'
+    security_opt:
+      - no-new-privileges=true
+    cap_drop:
+      - ALL
+    cap_add:
+      - SYS_NICE
+
+    restart: unless-stopped

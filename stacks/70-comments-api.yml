@@ -1,0 +1,24 @@
+services:
+  comments-api:
+    image: node:22-alpine
+    container_name: ct-comments-api
+    working_dir: /app
+    volumes:
+      - /srv/docker/volumes/one137-comments-api:/app
+    command: npm run install-and-start # PROD: install-and-start, DEV: dev
+    environment:
+      - MONGODB_URI=mongodb://${MONGO_USER}:${MONGO_PASS}@ct-mongodb:27017
+      - PROXY_IP=::ffff:172.29.0.3
+      # - ALLOWED_ORIGIN_RE=^https://one137\.dev|http://localhost:8080$ # DEV only
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    restart: unless-stopped # PROD only
+    networks:
+      - 50-mongodb_internal
+      - default
+
+networks:
+  50-mongodb_internal:
+    external: true
+  default:
+    driver: bridge

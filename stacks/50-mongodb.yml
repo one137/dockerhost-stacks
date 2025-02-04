@@ -1,0 +1,24 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: ct-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${ROOT_PASSWORD} 
+      GLIBC_TUNABLES: glibc.pthread.rseq=0
+    networks:
+      - internal
+    volumes: 
+      - /srv/docker/volumes/mongodb/db:/data/db
+      - /srv/docker/volumes/mongodb/configdb:/data/configdb
+      # - /mnt/nas-xfs-zvol/db:/data/db
+      # - /mnt/nas-xfs-zvol/configdb:/data/configdb
+    mem_limit: 512m
+    memswap_limit: 512m
+    command: mongod --wiredTigerCacheSizeGB 0.3 # 300MB, based on 512MB total
+    restart: unless-stopped
+
+networks:
+  internal:
+    driver: bridge
+    internal: true

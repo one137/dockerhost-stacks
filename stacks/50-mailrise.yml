@@ -1,0 +1,12 @@
+services:
+  mailrise:
+    image: yoryan/mailrise
+    container_name: ct-mailrise
+    volumes:
+      - type: bind
+        source: /srv/docker/volumes/mailrise/mailrise.conf
+        target: /etc/mailrise.conf
+        read_only: true
+    # ports:
+    #   - 8025:8025
+    restart: unless-stopped

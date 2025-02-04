@@ -1,0 +1,20 @@
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: ct-transmission
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Europe/Zurich
+      - USER=${USER}
+      - PASS=${PASS}
+    volumes:
+      - /srv/docker/volumes/transmission:/config
+      - /mnt/video-nas/torrents:/downloads
+      - /mnt/video-nas/torrents/watch:/watch
+    network_mode: "container:ct-wireguard-client" # To route all trafic thru the VPN
+    # ports:
+    #   - 9091:9091
+    #   - 51413:51413
+    #   - 51413:51413/udp
+    restart: unless-stopped

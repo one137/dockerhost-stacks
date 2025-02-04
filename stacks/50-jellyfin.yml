@@ -1,0 +1,21 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: ct-jellyfin
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Europe/Zurich
+      - JELLYFIN_PublishedServerUrl=https://jellyfin.one137.dev
+    volumes:
+      - /srv/docker/volumes/jellyfin/library:/config
+      - /mnt/video-nas/saved/asian-movies:/data/asian-movies
+      - /mnt/video-nas/saved/japanase-anime:/data/japanase-anime
+      - /mnt/video-nas/saved/movies:/data/movies
+      - /mnt/video-nas/torrents/complete:/data/torrents
+    # ports:
+      # - 8096:8096 # Http webUI
+      # - 8920:8920 # Optional - Https webUI
+      # - 7359:7359/udp # Optional - Allows clients to discover Jellyfin on the local network
+      # - 1900:1900/udp # Optional - Service discovery used by DNLA and clients.
+    restart: unless-stopped

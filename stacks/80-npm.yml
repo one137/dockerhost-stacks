@@ -1,0 +1,54 @@
+services:
+  npm:
+    container_name: ct-npm
+    image: 'jc21/nginx-proxy-manager:latest'
+    ports:
+      - '443:443'     # Public HTTPS Port
+      # - '81:81'     # NPM itself, if not configd yet
+      # Streams:
+      - '${WG_PORT}:${WG_PORT}/udp' # Wireguard
+      - '27017:27017' # MongoDB
+      - '8025:8025'   # Mailrise (SMTP)
+    environment:
+      DISABLE_IPV6: true
+      PUID: 1001
+      PGID: 1001
+      TZ: Europe/Zurich
+    volumes:
+      - /srv/docker/volumes/one137-web:/srv/docker/volumes/one137-web
+      - /srv/docker/volumes/npm/data:/data
+      - /srv/docker/volumes/npm/letsencrypt:/etc/letsencrypt
+    networks:
+      - portainer_net
+      - 30-pihole_default
+      - 40-wireguard-client_default
+      - 40-wireguard-easy_default
+      - 50-cloudflared_default
+      - 50-jellyfin_default
+      - 50-mailrise_default
+      - 50-mongodb_internal
+      - 60-uptime-kuma_default
+      - 70-comments-api_default
+    restart: unless-stopped
+
+networks:
+  portainer_net:
+    external: true
+  30-pihole_default:
+    external: true
+  40-wireguard-client_default:
+    external: true
+  40-wireguard-easy_default:
+    external: true
+  50-cloudflared_default:
+    external: true
+  50-jellyfin_default:
+    external: true
+  50-mongodb_internal:
+    external: true
+  50-mailrise_default:
+    external: true
+  60-uptime-kuma_default:
+    external: true
+  70-comments-api_default:
+    external: true

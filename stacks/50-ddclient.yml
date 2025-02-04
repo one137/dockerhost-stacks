@@ -1,0 +1,11 @@
+services:
+  ddclient:
+    image: lscr.io/linuxserver/ddclient:latest
+    container_name: ct-ddclient
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Europe/Zurich
+    volumes:
+      - /srv/docker/volumes/ddclient:/config
+    restart: unless-stopped

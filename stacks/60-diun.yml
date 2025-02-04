@@ -1,0 +1,19 @@
+services:
+  diun:
+    image: crazymax/diun:latest
+    container_name: ct-diun
+    hostname: ct-diun
+    command: serve
+    volumes:
+      - /srv/docker/volumes/diun/data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TZ=Europe/Zurich
+      - LOG_LEVEL=info # One of panic, fatal, error, warn, [info], debug, trace
+      - DIUN_WATCH_SCHEDULE=0 9 * * 6
+      - DIUN_PROVIDERS_DOCKER=true
+      - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true
+      - DIUN_NOTIF_TELEGRAM_TOKEN=${TELEGRAM_TOKEN} # TEST: docker exec ct-diun diun notif test
+      - DIUN_NOTIF_TELEGRAM_CHATIDS=${TELEGRAM_CHATID}
+      - 'DIUN_NOTIF_TELEGRAM_TEMPLATEBODY=*Diun*: {{ if .Entry.Image.HubLink }}[{{ .Entry.Image.Path }}:{{ .Entry.Image.Tag }}]({{ .Entry.Image.HubLink }}){{ else }}{{ .Entry.Image }}{{ end }} has been {{ if (eq .Entry.Status "new") }}newly added{{ else }}updated{{ end }} on {{ .Entry.Manifest.Created.Format "2006-01-02 Mon" }}.'
+    restart: unless-stopped
