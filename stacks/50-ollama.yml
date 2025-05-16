@@ -10,8 +10,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8G
-          cpus: '8'
+          memory: 10G
+          cpus: '22'
     security_opt:
       - no-new-privileges=true
     cap_drop:

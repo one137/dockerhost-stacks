@@ -5,15 +5,23 @@ services:
     ports:
       - '53:53/tcp'
       - '53:53/udp'
-    environment:
-      TZ: 'Europe/Zurich'
-      WEBPASSWORD: ${WEBPASSWORD}
-      DNSMASQ_LISTENING: all
-      FTLCONF_LOCAL_IPV4: 192.168.1.101
-      PIHOLE_DNS_: 1.1.1.1;1.0.0.1
-      WEBTHEME: default-dark
-      VIRTUAL_HOST: pihole2.one137.dev
     volumes:
       - '/srv/docker/volumes/pihole/etc-pihole:/etc/pihole'
       - '/srv/docker/volumes/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
+    environment:
+      TZ: 'Europe/Zurich'
+      FTLCONF_misc_etc_dnsmasq_d: 'true'
+      FTLCONF_dns_listeningMode: 'all'
+      FTLCONF_webserver_api_password: ${WEBPASSWORD}
+      FTLCONF_dns_upstreams: '1.1.1.1;1.0.0.1'
+      FTLCONF_webserver_interface_theme: 'default-dark'
+      # Old v5 vars:
+      # WEBPASSWORD: ${WEBPASSWORD}
+      # DNSMASQ_LISTENING: all
+      # FTLCONF_LOCAL_IPV4: 192.168.1.101
+      # PIHOLE_DNS_: 1.1.1.1;1.0.0.1
+      # WEBTHEME: default-dark
+      # VIRTUAL_HOST: pihole2.one137.dev
+    labels:
+      - diun.enable=true
     restart: unless-stopped

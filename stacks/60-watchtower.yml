@@ -1,0 +1,15 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: ct-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_SCHEDULE: "0 45 8 * * 6"
+      TZ: "Europe/Zurich"
+      WATCHTOWER_DISABLE_CONTAINERS: "ct-npm ct-pihole ct-wireguard-client"
+      WATCHTOWER_NOTIFICATION_URL: "telegram://${TELEGRAM_TOKEN}@telegram?chats={TELEGRAM_CHATID}"
+      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_REMOVE_VOLUMES: true
+    restart: unless-stopped
+      

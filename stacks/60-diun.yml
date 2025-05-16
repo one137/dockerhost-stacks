@@ -12,7 +12,7 @@ services:
       - LOG_LEVEL=info # One of panic, fatal, error, warn, [info], debug, trace
       - DIUN_WATCH_SCHEDULE=0 9 * * 6
       - DIUN_PROVIDERS_DOCKER=true
-      - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true
+      # - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true # Only enable for containers with label diun.enable=true
       - DIUN_NOTIF_TELEGRAM_TOKEN=${TELEGRAM_TOKEN} # TEST: docker exec ct-diun diun notif test
       - DIUN_NOTIF_TELEGRAM_CHATIDS=${TELEGRAM_CHATID}
       - 'DIUN_NOTIF_TELEGRAM_TEMPLATEBODY=*Diun*: {{ if .Entry.Image.HubLink }}[{{ .Entry.Image.Path }}:{{ .Entry.Image.Tag }}]({{ .Entry.Image.HubLink }}){{ else }}{{ .Entry.Image }}{{ end }} has been {{ if (eq .Entry.Status "new") }}newly added{{ else }}updated{{ end }} on {{ .Entry.Manifest.Created.Format "2006-01-02 Mon" }}.'
