@@ -1,0 +1,16 @@
+services:
+  clipse-api:
+    image: golang:alpine
+    container_name: ct-clipse-api
+    working_dir: /app
+    volumes:
+      - /srv/docker/volumes/one137-clipse-api:/app
+      - /srv/docker/volumes/syncthing/data/clipse-history:/app/clipse-history
+      # - /mnt/clipse-history:/app/clipse-history
+    command: go run main.go
+    environment:
+      - AUTH_USER=${AUTH_USER}
+      - AUTH_PASS=${AUTH_PASS}
+      - CLIPBOARD_JSON_FILE=${CLIPBOARD_JSON_FILE}
+      - TZ=Europe/Zurich
+    restart: unless-stopped

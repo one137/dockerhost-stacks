@@ -7,8 +7,10 @@ services:
       # - '81:81'     # NPM itself, if not configd yet
       # Streams:
       - '${WG_PORT}:${WG_PORT}/udp' # Wireguard
-      - '27017:27017' # MongoDB
-      - '8025:8025'   # Mailrise (SMTP)
+      - '27017:27017'     # MongoDB
+      - '8025:8025'       # Mailrise (SMTP)
+      - '22000:22000/tcp' # Syncthing
+      - '22000:22000/udp' #
     environment:
       DISABLE_IPV6: true
       PUID: 1001
@@ -19,16 +21,19 @@ services:
       - /srv/docker/volumes/npm/data:/data
       - /srv/docker/volumes/npm/letsencrypt:/etc/letsencrypt
     networks:
-      - portainer_net
-      - 30-pihole_default
-      - 40-wireguard-client_default
-      - 40-wireguard-easy_default
-      - 50-cloudflared_default
-      - 50-jellyfin_default
-      - 50-mailrise_default
-      - 50-mongodb_internal
-      - 60-uptime-kuma_default
-      - 70-comments-api_default
+      portainer_net:
+      30-pihole_default:
+      40-syncthing_default:
+      40-wireguard-client_default:
+      40-wireguard-easy_static:
+        ipv4_address: 10.100.0.4
+      50-cloudflared_default:
+      50-jellyfin_default:
+      50-mailrise_default:
+      50-mongodb_internal:
+      60-uptime-kuma_default:
+      70-clipse-api_default:
+      70-comments-api_default:
     labels:
       - diun.enable=true
     restart: unless-stopped
@@ -38,9 +43,11 @@ networks:
     external: true
   30-pihole_default:
     external: true
+  40-syncthing_default:
+    external: true
   40-wireguard-client_default:
     external: true
-  40-wireguard-easy_default:
+  40-wireguard-easy_static:
     external: true
   50-cloudflared_default:
     external: true
@@ -52,5 +59,7 @@ networks:
     external: true
   60-uptime-kuma_default:
     external: true
-  70-comments-api_default:
+  70-clipse-api_default:
     external: true
+  70-comments-api_default:
+    external: true    
