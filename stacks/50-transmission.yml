@@ -2,6 +2,7 @@ services:
   transmission:
     image: lscr.io/linuxserver/transmission:latest
     container_name: ct-transmission
+    entrypoint: /bin/sh -c "sleep 30 && exec /init"
     environment:
       - PUID=1001
       - PGID=1001

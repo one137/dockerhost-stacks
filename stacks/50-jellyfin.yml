@@ -2,6 +2,7 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: ct-jellyfin
+    entrypoint: /bin/sh -c "sleep 30 && exec /init"
     environment:
       - PUID=1001
       - PGID=1001
@@ -13,6 +14,8 @@ services:
       - /mnt/video-nas/saved/japanase-anime:/data/japanase-anime
       - /mnt/video-nas/saved/movies:/data/movies
       - /mnt/video-nas/torrents/complete:/data/torrents
+    labels:
+      - diun.enable=true
     # ports:
       # - 8096:8096 # Http webUI
       # - 8920:8920 # Optional - Https webUI

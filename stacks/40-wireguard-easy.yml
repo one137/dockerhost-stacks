@@ -31,7 +31,7 @@ services:
       - PASSWORD_HASH=${PASSWORD_HASH}
       - WG_PORT=${WG_PORT}
       - WG_DEFAULT_DNS=10.100.0.2 # IP of ct-dnsmasq-wireguard
-      - WG_ALLOWED_IPS=192.168.1.0/24, 172.16.0.0/12, 10.8.0.0/16
+      # - WG_ALLOWED_IPS=192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8
       - WG_PERSISTENT_KEEPALIVE=30
       - UI_TRAFFIC_STATS=true
       - UI_CHART_TYPE=2 # (0 Charts disabled, 1 # Line chart, 2 # Area chart, 3 # Bar chart)
