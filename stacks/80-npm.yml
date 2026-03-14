@@ -28,6 +28,7 @@ services:
       40-wireguard-easy_static:
         ipv4_address: 10.100.0.4
       50-cloudflared_default:
+      50-immich_default:
       50-jellyfin_default:
       50-mailrise_default:
       50-mongodb_internal:
@@ -50,6 +51,8 @@ networks:
   40-wireguard-easy_static:
     external: true
   50-cloudflared_default:
+    external: true
+  50-immich_default:
     external: true
   50-jellyfin_default:
     external: true
