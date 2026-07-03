@@ -32,6 +32,7 @@ services:
       50-jellyfin_default:
       50-mailrise_default:
       50-mongodb_internal:
+      50-transmission_default:
       60-uptime-kuma_default:
       70-clipse-api_default:
       70-comments-api_default:
@@ -59,6 +60,8 @@ networks:
   50-mongodb_internal:
     external: true
   50-mailrise_default:
+    external: true
+  50-transmission_default:
     external: true
   60-uptime-kuma_default:
     external: true
