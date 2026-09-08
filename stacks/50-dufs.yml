@@ -1,0 +1,9 @@
+services:
+  dufs:
+    image: sigoden/dufs:v0.46.0
+    container_name: ct-dufs
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/volumes/dufs/data:/data
+      - /srv/docker/volumes/dufs/config.yaml:/config.yaml:ro
+    command: --config /config.yaml
