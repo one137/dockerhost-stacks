@@ -24,10 +24,11 @@ services:
       portainer_net:
       30-pihole_default:
       40-syncthing_default:
-      40-wireguard-client_default:
+      # 40-wireguard-client_default: # If transmission behind VPN
       40-wireguard-easy_static:
         ipv4_address: 10.100.0.4
       50-cloudflared_default:
+      50-dufs_default:
       50-immich_default:
       50-jellyfin_default:
       50-mailrise_default:
@@ -47,11 +48,13 @@ networks:
     external: true
   40-syncthing_default:
     external: true
-  40-wireguard-client_default:
-    external: true
+  # 40-wireguard-client_default: # If transmission behind VPN
+  #   external: true
   40-wireguard-easy_static:
     external: true
   50-cloudflared_default:
+    external: true
+  50-dufs_default:
     external: true
   50-immich_default:
     external: true

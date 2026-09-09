@@ -1,16 +1,20 @@
 services:
   clipse-api:
-    image: golang:alpine
+    image: ghcr.io/one137/clipse-api:latest
     container_name: ct-clipse-api
-    working_dir: /app
+    user: 1001:1001 # dockeruser, owns the history file
     volumes:
-      - /srv/docker/volumes/one137-clipse-api:/app
       - /srv/docker/volumes/syncthing/data/clipse-history:/app/clipse-history
-      # - /mnt/clipse-history:/app/clipse-history
-    command: go run main.go
     environment:
-      - AUTH_USER=${AUTH_USER}
-      - AUTH_PASS=${AUTH_PASS}
+      - AUTH_TOKEN=${AUTH_TOKEN}
       - CLIPBOARD_JSON_FILE=${CLIPBOARD_JSON_FILE}
+      # Subnet of 70-clipse-api_default, i.e. where ct-npm connects from:
+      # docker network inspect 70-clipse-api_default -f '{{range .IPAM.Config}}{{.Subnet}}{{end}}'
+      - TRUSTED_PROXY_CIDR=${TRUSTED_PROXY_CIDR}
       - TZ=Europe/Zurich
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges=true
     restart: unless-stopped
