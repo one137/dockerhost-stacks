@@ -13,7 +13,8 @@ services:
       - /mnt/video-nas/saved/asian-movies:/data/asian-movies
       - /mnt/video-nas/saved/japanase-anime:/data/japanase-anime
       - /mnt/video-nas/saved/movies:/data/movies
-      - /mnt/video-nas/torrents/complete:/data/torrents
+      - /mnt/video-nas/torrents/complete:/data/torrents-complete
+      - /mnt/video-nas/torrents/watch:/data/torrents-watch
     labels:
       - diun.enable=true
     # ports:

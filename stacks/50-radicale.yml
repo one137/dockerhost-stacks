@@ -1,0 +1,24 @@
+services:
+  radicale:
+    image: tomsquest/docker-radicale:latest
+    container_name: ct-radicale
+    # This image runs as its own uid/gid 2999, not dockeruser. Forcing UID/GID at
+    # runtime needs a writable rootfs, which would mean giving up read_only, so the
+    # bind mounts are chowned to 2999 instead — deliberate exception to the
+    # dockeruser convention.
+    volumes:
+      - /srv/docker/volumes/radicale/data:/data
+      - /srv/docker/volumes/radicale/config:/config:ro
+    environment:
+      - TZ=Europe/Zurich
+    read_only: true
+    cap_drop:
+      - ALL
+    user: "2999:2999"
+    security_opt:
+      - no-new-privileges=true
+    healthcheck:
+      test: curl --fail http://localhost:5232 || exit 1
+      interval: 30s
+      retries: 3
+    restart: unless-stopped
