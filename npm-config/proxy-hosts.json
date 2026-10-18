@@ -1,0 +1,1085 @@
+[
+  {
+    "id": 20,
+    "created_on": "2026-09-13 15:22:11",
+    "modified_on": "2026-09-13 15:22:11",
+    "owner_user_id": 1,
+    "domain_names": [
+      "cal.one137.dev",
+      "radicale.one137.dev"
+    ],
+    "forward_host": "ct-radicale",
+    "forward_port": 5232,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "client_max_body_size 100m;",
+    "meta": {
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 15,
+    "created_on": "2025-09-02 16:37:36",
+    "modified_on": "2026-02-28 08:12:22",
+    "owner_user_id": 1,
+    "domain_names": [
+      "dockerhost-st.one137.dev",
+      "syncthing-dh.one137.dev"
+    ],
+    "forward_host": "ct-syncthing",
+    "forward_port": 8384,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 18,
+    "created_on": "2026-08-20 17:42:22",
+    "modified_on": "2026-09-13 21:03:19",
+    "owner_user_id": 1,
+    "domain_names": [
+      "dufs.one137.dev",
+      "files.one137.dev"
+    ],
+    "forward_host": "ct-dufs",
+    "forward_port": 5000,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "client_max_body_size 100m;",
+    "meta": {
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 16,
+    "created_on": "2026-02-08 11:31:36",
+    "modified_on": "2026-09-13 21:03:28",
+    "owner_user_id": 1,
+    "domain_names": [
+      "immich.one137.dev"
+    ],
+    "forward_host": "immich_server",
+    "forward_port": 2283,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": true,
+    "block_exploits": true,
+    "advanced_config": "client_max_body_size 100m;",
+    "meta": {
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 11,
+    "created_on": "2024-12-28 22:12:56",
+    "modified_on": "2026-02-28 08:13:19",
+    "owner_user_id": 1,
+    "domain_names": [
+      "jellyfin.one137.dev"
+    ],
+    "forward_host": "ct-jellyfin",
+    "forward_port": 8096,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 3,
+    "created_on": "2024-12-23 22:03:17",
+    "modified_on": "2026-03-11 15:13:36",
+    "owner_user_id": 1,
+    "domain_names": [
+      "npm.one137.dev"
+    ],
+    "forward_host": "ct-npm",
+    "forward_port": 81,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 1,
+    "created_on": "2024-12-19 22:19:50",
+    "modified_on": "2026-09-09 16:32:43",
+    "owner_user_id": 1,
+    "domain_names": [
+      "one137.dev"
+    ],
+    "forward_host": "STATIC_FILES",
+    "forward_port": 1,
+    "access_list_id": 0,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "location / { \n  root /data/nginx/custom/one137-web;\n  try_files $uri $uri.html $uri/ =404;\n\n  access_log /data/logs/proxy-host-1_access.log default_plus_cf;\n\n  allow 192.168.137.0/24; # lan\n  allow 10.100.0.3/32;    # wg-easy\n  allow 172.21.0.2/32;    # cloudflared\n  deny all;\n}\n\nlocation = /health {\n    access_log off;\n    root /data/nginx/custom/one137-web;\n    try_files /index.html =404;\n}",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [
+      {
+        "path": "/comments-api",
+        "advanced_config": "",
+        "forward_scheme": "http",
+        "forward_host": "ct-comments-api",
+        "forward_port": 3000
+      },
+      {
+        "path": "/clipse-api/",
+        "advanced_config": "",
+        "forward_scheme": "http",
+        "forward_host": "ct-clipse-api/",
+        "forward_port": 8080
+      }
+    ],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": null,
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 4,
+    "created_on": "2024-12-23 22:06:37",
+    "modified_on": "2026-02-28 08:13:28",
+    "owner_user_id": 1,
+    "domain_names": [
+      "pihole1.one137.dev"
+    ],
+    "forward_host": "pihole1",
+    "forward_port": 80,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 6,
+    "created_on": "2024-12-24 11:31:41",
+    "modified_on": "2026-02-28 08:13:31",
+    "owner_user_id": 1,
+    "domain_names": [
+      "pihole2.one137.dev"
+    ],
+    "forward_host": "ct-pihole",
+    "forward_port": 80,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 9,
+    "created_on": "2024-12-25 10:06:37",
+    "modified_on": "2026-02-28 08:13:34",
+    "owner_user_id": 1,
+    "domain_names": [
+      "portainer.one137.dev"
+    ],
+    "forward_host": "ct-portainer",
+    "forward_port": 9443,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "https",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 8,
+    "created_on": "2024-12-24 15:40:11",
+    "modified_on": "2026-02-28 08:14:06",
+    "owner_user_id": 1,
+    "domain_names": [
+      "proxmox.one137.dev"
+    ],
+    "forward_host": "proxmox",
+    "forward_port": 8006,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "https",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 17,
+    "created_on": "2026-05-26 21:51:42",
+    "modified_on": "2026-05-26 21:51:42",
+    "owner_user_id": 1,
+    "domain_names": [
+      "restic.one137.dev"
+    ],
+    "forward_host": "truenas",
+    "forward_port": 30248,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": false,
+    "advanced_config": "",
+    "meta": {
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 13,
+    "created_on": "2024-12-31 15:45:11",
+    "modified_on": "2026-03-14 20:58:58",
+    "owner_user_id": 1,
+    "domain_names": [
+      "router.one137.dev",
+      "zyxel.one137.dev"
+    ],
+    "forward_host": "router",
+    "forward_port": 80,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": true,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 10,
+    "created_on": "2024-12-26 21:12:02",
+    "modified_on": "2026-02-28 08:14:00",
+    "owner_user_id": 1,
+    "domain_names": [
+      "syncthing.one137.dev"
+    ],
+    "forward_host": "truenas",
+    "forward_port": 20910,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "https",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 5,
+    "created_on": "2024-12-24 10:44:55",
+    "modified_on": "2026-06-16 21:32:17",
+    "owner_user_id": 1,
+    "domain_names": [
+      "transmission.one137.dev"
+    ],
+    "forward_host": "ct-transmission",
+    "forward_port": 9091,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 7,
+    "created_on": "2024-12-24 15:37:48",
+    "modified_on": "2026-02-28 08:13:50",
+    "owner_user_id": 1,
+    "domain_names": [
+      "truenas.one137.dev"
+    ],
+    "forward_host": "truenas",
+    "forward_port": 80,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": true,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 19,
+    "created_on": "2026-09-09 09:23:35",
+    "modified_on": "2026-09-09 10:37:53",
+    "owner_user_id": 1,
+    "domain_names": [
+      "upsnap.one137.dev"
+    ],
+    "forward_host": "172.17.0.1",
+    "forward_port": 8090,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": false,
+    "advanced_config": "",
+    "meta": {
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 12,
+    "created_on": "2024-12-29 10:50:27",
+    "modified_on": "2026-02-28 08:13:47",
+    "owner_user_id": 1,
+    "domain_names": [
+      "uptime-kuma.one137.dev"
+    ],
+    "forward_host": "ct-uptime-kuma",
+    "forward_port": 3001,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  },
+  {
+    "id": 2,
+    "created_on": "2024-12-20 06:56:10",
+    "modified_on": "2026-07-03 10:35:56",
+    "owner_user_id": 1,
+    "domain_names": [
+      "wg-easy.one137.dev",
+      "wireguard-easy.one137.dev"
+    ],
+    "forward_host": "ct-wireguard-easy",
+    "forward_port": 51821,
+    "access_list_id": 1,
+    "certificate_id": 1,
+    "ssl_forced": true,
+    "caching_enabled": false,
+    "block_exploits": true,
+    "advanced_config": "",
+    "meta": {
+      "letsencrypt_agree": false,
+      "dns_challenge": false,
+      "nginx_online": true,
+      "nginx_err": null
+    },
+    "allow_websocket_upgrade": false,
+    "http2_support": true,
+    "forward_scheme": "http",
+    "enabled": true,
+    "locations": [],
+    "hsts_enabled": false,
+    "hsts_subdomains": false,
+    "trust_forwarded_proto": false,
+    "access_list": {
+      "id": 1,
+      "created_on": "2024-12-19 22:15:23",
+      "modified_on": "2026-02-25 11:34:28",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "name": "LAN & Wireguard",
+      "meta": {},
+      "satisfy_any": false,
+      "pass_auth": false
+    },
+    "certificate": {
+      "id": 1,
+      "created_on": "2024-12-19 22:13:32",
+      "modified_on": "2026-10-09 23:40:51",
+      "owner_user_id": 1,
+      "is_deleted": false,
+      "provider": "letsencrypt",
+      "nice_name": "one137.dev, *.one137.dev",
+      "domain_names": [
+        "*.one137.dev",
+        "one137.dev"
+      ],
+      "expires_on": "2027-01-07 20:42:18",
+      "meta": {}
+    }
+  }
+]
