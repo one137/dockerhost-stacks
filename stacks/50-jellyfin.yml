@@ -2,7 +2,7 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: ct-jellyfin
-    entrypoint: /bin/sh -c "sleep 30 && exec /init"
+    # entrypoint: /bin/sh -c "sleep 30 && exec /init"
     environment:
       - PUID=1001
       - PGID=1001

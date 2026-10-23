@@ -1,6 +1,6 @@
 # NPM configuration
 
-Exported from NPM on 2026-10-18 by `export_npm_config.sh`. Secrets are redacted; see the script header.
+Exported from NPM on 2026-10-23 by `export_npm_config.sh`. Secrets are redacted; see the script header.
 
 ## Proxy hosts
 
@@ -22,7 +22,7 @@ Exported from NPM on 2026-10-18 by `export_npm_config.sh`. Secrets are redacted;
 | syncthing.one137.dev | `https://truenas:20910` | HTTP2, force SSL, block exploits | LAN & Wireguard | one137.dev, *.one137.dev |  |
 | transmission.one137.dev | `http://ct-transmission:9091` | HTTP2, force SSL, block exploits | LAN & Wireguard | one137.dev, *.one137.dev |  |
 | truenas.one137.dev | `http://truenas:80` | WS, HTTP2, force SSL, block exploits | LAN & Wireguard | one137.dev, *.one137.dev |  |
-| upsnap.one137.dev | `http://172.17.0.1:8090` | HTTP2, force SSL | LAN & Wireguard | one137.dev, *.one137.dev |  |
+| upsnap.one137.dev | `http://172.16.0.1:8090` | HTTP2, force SSL | LAN & Wireguard | one137.dev, *.one137.dev |  |
 | uptime-kuma.one137.dev | `http://ct-uptime-kuma:3001` | HTTP2, force SSL, block exploits | LAN & Wireguard | one137.dev, *.one137.dev |  |
 | wg-easy.one137.dev<br>wireguard-easy.one137.dev | `http://ct-wireguard-easy:51821` | HTTP2, force SSL, block exploits | LAN & Wireguard | one137.dev, *.one137.dev |  |
 
