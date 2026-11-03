@@ -8,8 +8,7 @@ services:
     environment:
       - AUTH_TOKEN=${AUTH_TOKEN}
       - CLIPBOARD_JSON_FILE=${CLIPBOARD_JSON_FILE}
-      # Subnet of 70-clipse-api_default, i.e. where ct-npm connects from:
-      # docker network inspect 70-clipse-api_default -f '{{range .IPAM.Config}}{{.Subnet}}{{end}}'
+      # Any docker address: wide on purpose, so no recreate can make it stale:
       - TRUSTED_PROXY_CIDR=${TRUSTED_PROXY_CIDR}
       - TZ=Europe/Zurich
     read_only: true

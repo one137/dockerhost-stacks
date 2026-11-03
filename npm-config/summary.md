@@ -86,6 +86,20 @@ location = /health {
     try_files /index.html =404;
 }
 
-location ~ /\. { return 404; }
+location ~ /\. { 
+    return 404;
+}
+```
+
+Location `/comments-api` → `http://ct-comments-api:3000`
+
+```nginx
+access_log /data/logs/proxy-host-1_access.log default_plus_cf;
+```
+
+Location `/clipse-api/` → `http://ct-clipse-api:8080/`
+
+```nginx
+access_log /data/logs/proxy-host-1_access.log default_plus_cf;
 ```
 
