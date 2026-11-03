@@ -4,3 +4,17 @@ services:
     image: cloudflare/cloudflared:latest
     command: tunnel --no-autoupdate run --token ${TOKEN}
     restart: unless-stopped
+    networks:
+      default:
+        # Pinned: NPM's one137.dev location block allows this address, and an
+        # auto-assigned one silently 403s the public site on a stack recreate.
+        ipv4_address: 172.21.0.2
+
+networks:
+  default:
+    # ipv4_address above requires a user-configured subnet. Kept at the values
+    # Docker had already allocated, so NPM's allow line needs no change.
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1
