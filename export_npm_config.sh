@@ -253,7 +253,7 @@ EXPORTED_ON=$(cat "$OUTPUT_DIR/exported-on" 2>/dev/null) || EXPORTED_ON="an unkn
 # The path decides whether nginx strips the location prefix, so the summary must show it.
 JQ_LIB='
   def on($v): ($v == true) or ($v == 1);   # NPM returns booleans; older versions 0/1
-  def flag(f; $label): if on(f) then $label else empty end;
+  def flag(f; $text): if on(f) then $text else empty end;   # not $label: a keyword to jq < 1.7
   def disabled: if on(.enabled) then empty else "**disabled**" end;
   def has_advanced: (.advanced_config // "") != "";
   def cert: .certificate.nice_name // (if (.certificate_id // 0) == 0 then "_none_" else "#\(.certificate_id)" end);
