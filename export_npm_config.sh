@@ -35,9 +35,9 @@
 # rebuild the routing, and all of it is recoverable from Cloudflare or by re-issuing the
 # certificates. This matters because dockerhost-stacks is a public repo.
 #
-# NPM's custom include files are files, not API data. The one in use, http_top.conf, is
-# copied by hand, from within npm-config/:
-#   scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/http_top.conf .
+# NPM's custom include files are files, not API data. The two in use, http_top.conf and
+# server_proxy.conf, are copied by hand, from within npm-config/:
+#   scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/{http_top,server_proxy}.conf .
 
 # Constants
 NPM_URL="${NPM_URL:-https://npm.one137.dev}"
@@ -381,7 +381,11 @@ table() {
     echo
 
     if [[ -f "$OUTPUT_DIR/http_top.conf" ]]; then
-        echo "They can also rely on \`data/nginx/custom/http_top.conf\`, which NPM includes at the top of its \`http\` block (a log format, for one). That file is not API data: [\`http_top.conf\`](http_top.conf) is a copy taken by hand, with \`scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/http_top.conf .\`. Its commented-out \`set_real_ip_from\` lines don't mean real-IP is off: NPM's own \`nginx.conf\` already sets them, with \`real_ip_header X-Real-IP\`."
+        echo "They can also rely on \`data/nginx/custom/http_top.conf\`, which NPM includes at the top of its \`http\` block (a log format, for one). That file is not API data: [\`http_top.conf\`](http_top.conf) is a copy taken by hand, with \`scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/{http_top,server_proxy}.conf .\`."
+        echo
+    fi
+    if [[ -f "$OUTPUT_DIR/server_proxy.conf" ]]; then
+        echo "[\`server_proxy.conf\`](server_proxy.conf), copied the same way, is included in every proxy host's \`server\` block. Its \`set_real_ip_from 127.0.0.1;\` replaces the private ranges NPM's own \`nginx.conf\` trusts for \`X-Real-IP\`, so no container can pose as a LAN client to pass an access list. The commented-out \`set_real_ip_from\` lines in \`http_top.conf\` only copy those defaults."
         echo
     fi
 

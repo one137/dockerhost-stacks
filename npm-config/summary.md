@@ -63,7 +63,9 @@ Exported from NPM on 2026-11-03 by `export_npm_config.sh`. Secrets are redacted;
 
 These snippets are typed into NPM's UI and live only in its database.
 
-They can also rely on `data/nginx/custom/http_top.conf`, which NPM includes at the top of its `http` block (a log format, for one). That file is not API data: [`http_top.conf`](http_top.conf) is a copy taken by hand, with `scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/http_top.conf .`. Its commented-out `set_real_ip_from` lines don't mean real-IP is off: NPM's own `nginx.conf` already sets them, with `real_ip_header X-Real-IP`.
+They can also rely on `data/nginx/custom/http_top.conf`, which NPM includes at the top of its `http` block (a log format, for one). That file is not API data: [`http_top.conf`](http_top.conf) is a copy taken by hand, with `scp dockerhost:/srv/docker/volumes/npm/data/nginx/custom/{http_top,server_proxy}.conf .`.
+
+[`server_proxy.conf`](server_proxy.conf), copied the same way, is included in every proxy host's `server` block. Its `set_real_ip_from 127.0.0.1;` replaces the private ranges NPM's own `nginx.conf` trusts for `X-Real-IP`, so no container can pose as a LAN client to pass an access list. The commented-out `set_real_ip_from` lines in `http_top.conf` only copy those defaults.
 
 ### one137.dev
 
