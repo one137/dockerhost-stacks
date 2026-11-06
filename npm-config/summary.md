@@ -1,6 +1,6 @@
 # NPM configuration
 
-Exported from NPM on 2026-11-03 by `export_npm_config.sh`. Secrets are redacted; see the script header.
+Exported from NPM on 2026-11-06 by `export_npm_config.sh`. Secrets are redacted; see the script header.
 
 ## Proxy hosts
 
@@ -90,6 +90,8 @@ location = /health {
 
 location ~ /\. { 
     return 404;
+    
+    access_log /data/logs/proxy-host-1_access.log default_plus_cf;
 }
 ```
 

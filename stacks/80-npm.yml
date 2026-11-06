@@ -3,7 +3,7 @@ services:
     container_name: ct-npm
     image: 'jc21/nginx-proxy-manager:latest'
     ports:
-      - '443:443'     # Public HTTPS Port
+      - '443:443'     # HTTPS for LAN + WG (internet traffic arrives via cloudflared)
       # - '81:81'     # NPM itself, if not configd yet
       # Streams:
       - '${WG_PORT}:${WG_PORT}/udp' # Wireguard

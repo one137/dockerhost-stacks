@@ -341,7 +341,7 @@
   {
     "id": 1,
     "created_on": "2024-12-19 22:19:50",
-    "modified_on": "2026-11-03 21:58:54",
+    "modified_on": "2026-11-04 09:46:38",
     "owner_user_id": 1,
     "domain_names": [
       "one137.dev"
@@ -353,7 +353,7 @@
     "ssl_forced": true,
     "caching_enabled": false,
     "block_exploits": true,
-    "advanced_config": "location / { \n  root /data/nginx/custom/one137-web;\n  try_files $uri $uri.html $uri/ =404;\n\n  access_log /data/logs/proxy-host-1_access.log default_plus_cf;\n\n  allow 192.168.137.0/24; # lan\n  allow 10.100.0.3/32;    # wg-easy\n  allow 172.21.0.2/32;    # cloudflared\n  deny all;\n}\n\nlocation = /health {\n    access_log off;\n    root /data/nginx/custom/one137-web;\n    try_files /index.html =404;\n}\n\nlocation ~ /\\. { \n    return 404;\n}",
+    "advanced_config": "location / { \n  root /data/nginx/custom/one137-web;\n  try_files $uri $uri.html $uri/ =404;\n\n  access_log /data/logs/proxy-host-1_access.log default_plus_cf;\n\n  allow 192.168.137.0/24; # lan\n  allow 10.100.0.3/32;    # wg-easy\n  allow 172.21.0.2/32;    # cloudflared\n  deny all;\n}\n\nlocation = /health {\n    access_log off;\n    root /data/nginx/custom/one137-web;\n    try_files /index.html =404;\n}\n\nlocation ~ /\\. { \n    return 404;\n    \n    access_log /data/logs/proxy-host-1_access.log default_plus_cf;\n}",
     "meta": {
       "letsencrypt_agree": false,
       "dns_challenge": false,
