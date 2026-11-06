@@ -1,0 +1,47 @@
+[DEFAULT]
+bantime = 2h
+findtime = 10m
+maxretry = 3
+action = cloudflare-firewall
+         telegram-notif
+# Also ignore all direct wireguard-to-npm and cloudflared-to-npm accesses
+ignoreip = 127.0.0.1/32 192.168.137.0/24 10.100.0.3/32 172.21.0.2/32
+
+# sshd is activated by default in jail.d/defaults-debian.conf
+[sshd]
+backend = systemd
+action = iptables
+         telegram-notif
+
+# NPM 404 errors (potential scanning)
+[npm-404]
+enabled = true
+logpath = /srv/docker/volumes/npm/data/logs/proxy-host-*_access.log
+filter = npm-404
+# Less strict for 404s
+maxretry = 10
+
+# HTTP forbidden access
+[npm-403]
+enabled = true
+logpath = /srv/docker/volumes/npm/data/logs/proxy-host-*_access.log
+filter = npm-403
+
+# Failed auth on the public APIs (/comments-api, /clipse-api/)
+[npm-401]
+enabled = true
+logpath = /srv/docker/volumes/npm/data/logs/proxy-host-*_access.log
+filter = npm-401
+
+# NPM forbidden access (disabled: only ever sees cloudflared's IP, which the one137.dev rules allow)
+[npm-forbidden]
+enabled = false
+logpath = /srv/docker/volumes/npm/data/logs/proxy-host-*_error.log
+filter = npm-forbidden
+
+# NPM protocol errors (SSL etc) (disabled: only sees LAN/WG clients, and those are all in ignoreip)
+[npm-protocol]
+enabled = false
+logpath = /srv/docker/volumes/npm/data/logs/fallback_access.log
+filter = npm-protocol
+

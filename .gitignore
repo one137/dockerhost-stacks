@@ -1,1 +1,2 @@
 *.env.json
+fail2ban/action.d/*.local
