@@ -1,4 +1,5 @@
 #!/bin/bash
+set -o pipefail # so $? below also catches a failed curl, not just jq
 
 # Constants
 PORTAINER_URL="https://localhost:9443"
@@ -16,7 +17,7 @@ fi
 
 mkdir -p "$OUTPUT_DIR"
 
-STACKS=$(curl -sk "$PORTAINER_URL/api/stacks" -H "X-API-Key: $PORTAINER_API_TOKEN")
+STACKS=$(curl -fsk "$PORTAINER_URL/api/stacks" -H "X-API-Key: $PORTAINER_API_TOKEN")
 if [[ $? -ne 0 || -z "$STACKS" ]]; then
     echo "Error: Failed to fetch stacks."
     exit 1
@@ -36,7 +37,7 @@ echo "$STACK_LIST" | while read -r STACK; do
 
     echo "Processing stack: $STACK_NAME (ID: $STACK_ID)"
 
-    STACK_FILE=$(curl -sk "$PORTAINER_URL/api/stacks/$STACK_ID/file" -H "X-API-Key: $PORTAINER_API_TOKEN" | jq -r '.StackFileContent')
+    STACK_FILE=$(curl -fsk "$PORTAINER_URL/api/stacks/$STACK_ID/file" -H "X-API-Key: $PORTAINER_API_TOKEN" | jq -er '.StackFileContent // empty')
     if [[ $? -ne 0 || -z "$STACK_FILE" ]]; then
         echo "  Warning: Failed to fetch stack file. Skipping."
         continue
@@ -45,8 +46,10 @@ echo "$STACK_LIST" | while read -r STACK; do
     echo "$STACK_FILE" > "$YML_PATH"
     echo "  Saved stack file to $YML_PATH"
 
-    STACK_ENV=$(curl -sk "$PORTAINER_URL/api/stacks/$STACK_ID" -H "X-API-Key: $PORTAINER_API_TOKEN" | jq -r '.Env')
-    if [[ $? -eq 0 && "$STACK_ENV" != "[]" ]]; then
+    STACK_ENV=$(curl -fsk "$PORTAINER_URL/api/stacks/$STACK_ID" -H "X-API-Key: $PORTAINER_API_TOKEN" | jq -er '.Env // []')
+    if [[ $? -ne 0 ]]; then
+        echo "  Warning: Failed to fetch environment variables. Keeping any existing env file."
+    elif [[ "$STACK_ENV" != "[]" ]]; then
         ENV_PATH="$OUTPUT_DIR/$STACK_NAME.env.json"
         echo "$STACK_ENV" > "$ENV_PATH"
         chmod go-rwx "$ENV_PATH"

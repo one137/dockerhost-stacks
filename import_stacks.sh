@@ -31,7 +31,7 @@ fi
 
 echo -e "Reading $INPUT_DIR/*.yml files...\n"
 for yml_file in $INPUT_DIR/*.yml; do
-    base_name=$(basename "$yml_file" .yml) # e.g. "30-st-pihole" from "stacks/30-st-pihole.yml"
+    base_name=$(basename "$yml_file" .yml) # e.g. "30-pihole" from "stacks/30-pihole.yml"
     echo "* Creating stack $base_name"
 
     env_file="$INPUT_DIR/${base_name}.env.json"
@@ -40,7 +40,7 @@ for yml_file in $INPUT_DIR/*.yml; do
              -H "X-API-Key: $PORTAINER_API_TOKEN" \
              -F "Name=$base_name" \
              -F "file=@$yml_file" \
-             -F "Env=$(cat "$env_file")"
+             -F "Env=<$env_file" # "<" reads the file verbatim; "$(cat ...)" cut values at a ";"
     else
         curl -k -X POST "$PORTAINER_URL/stacks/create/standalone/file?endpointId=$endpoint_id" \
              -H "X-API-Key: $PORTAINER_API_TOKEN" \
